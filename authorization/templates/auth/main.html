@@ -1,0 +1,14 @@
+{% extends 'auth/home_page.html' %}
+{% block content %}
+{{request.user.username}}
+<p>Click the buttons below to navigate Login:</p>
+<a class="btn btn-primary btn-lg" href="{% url 'registration' %}" role="button">Register</a>
+{% if user.is_authenticated %}
+    <a class="btn btn-primary btn-lg ml-4" href="{% url 'logout' %}" role="button">LogOut</a>
+{% else %}
+    <a class="btn btn-success btn-lg ml-4" href="{% url 'login' %}" role="button">Login</a>
+{% endif %}
+<p>Click the buttons below to navigate:</p>
+<a class="btn btn-primary btn-lg" href="{% url 'files/' %}" role="button">Files</a>
+<a class="btn btn-warning btn-lg ml-3" href="{% url 'users_all' %}" role="button">Users List</a>
+{% endblock content %}

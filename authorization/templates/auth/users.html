@@ -1,0 +1,28 @@
+{% extends 'auth/home_page.html' %}
+{% block content %}
+<h2>Users</h2>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in table %}
+        <tr>
+            <th scope="row">{{row.0}}</th>
+            <th >{{row.1}}</th>
+            <th >{{row.2}}</th>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-sm btn-success" href="{% url 'home_page' %}">Go Main Page</a>
+</div>
+
+
+{% endblock content %}

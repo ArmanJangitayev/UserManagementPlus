@@ -1,0 +1,22 @@
+{% extends 'auth/home_page.html' %}
+{% block content %}
+<h2>Sign Up</h2>
+{% if form.errors %}
+{{ form.errors }}
+{% endif %}
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+</form>
+<div class="mt-3">
+    <a class="btn btn-secondary btn-sm" href="{% url 'login' %}" role="button">Login</a>
+    <a class="btn btn-success btn-sm  ml-1" href="{% url 'home_page' %}" role="button">Home</a>
+</div>
+
+
+
+
+
+{% endblock content %}
